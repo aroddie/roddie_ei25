@@ -3,8 +3,34 @@ html, body {
   max-width: 600px;
   margin: 0 auto;
   padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #cfecec;
+}
+
+#canvas-wrap {
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
 }
 
 canvas {
   display: block;
+}
+
+button {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background-color: slategray;
+  border-radius: 20px;
+  border: 2px solid slategray;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #cfecec;
+  color: slategray;
 }

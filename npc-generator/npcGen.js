@@ -71,16 +71,22 @@ let frameSlider;
 
 // Canvas Setup
 function setup() {
-  createCanvas(600, 400);
+  let canvas = createCanvas(600, 400);
+  canvas.parent("canvas-wrap")
   // Make a save button
   saveChar = createButton('Save Character');
   saveChar.mousePressed(download);
+  saveChar.parent("canvas-wrap");
+  saveChar.position(50, 220);
   // Make a slider to control the frame rate
   frameSlider = createSlider(0.5, 30, 10, 0);
+  frameSlider.parent("canvas-wrap");
+  frameSlider.position(50, 20);
+  frameSlider.size(500);
 }
 
 function draw() {
-  background(220);
+  background('#cfecec');
   // Allow slider to control frame rate
   let speed = frameSlider.value();
   frameRate(speed);
@@ -95,17 +101,17 @@ function download() {
 
 //Character Setup
 function character() {
-  textWrap(WORD);
+  textSize(20);
   text(randomize(species) + " " + randomize(profession) + " with " + randomize(hairColor) + " hair and " + randomize(eyeColor) + " eyes.", 50, 100);
   // Keep pronouns consistent by randomizing before the text function
   let gender = randomize(pronouns);
   // Allow for proper grammar
   if (gender.objective !== "They") {
-  text(gender.objective + " has a " + randomize(mood) + " look on " + gender.possessive + " face.", 50, 125);
-  text(gender.objective + " carries a " + randomize(weapon) + ".", 50, 150);
+  text(gender.objective + " has a " + randomize(mood) + " look on " + gender.possessive + " face.", 50, 140);
+  text(gender.objective + " carries a " + randomize(weapon) + ".", 50, 180);
   } else {
-    text(gender.objective + " have a " + randomize(mood) + " look on " + gender.possessive + " face.", 50, 125);
-    text(gender.objective + " carry a " + randomize(weapon) + ".", 50, 150);
+    text(gender.objective + " have a " + randomize(mood) + " look on " + gender.possessive + " face.", 50, 140);
+    text(gender.objective + " carry a " + randomize(weapon) + ".", 50, 180);
   }
 }
 
