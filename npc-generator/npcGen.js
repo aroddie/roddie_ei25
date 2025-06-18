@@ -78,16 +78,24 @@ let pause;
 let frameSlider;
 let isLooping = true;
 let desc;
+let poppins;
+let parchment;
+
+function preload() {
+  poppins = loadFont('./fonts/poppins.ttf');
+  parchment = loadImage('./images/background.jpg');
+}
 
 // Canvas Setup
 function setup() {
   let canvas = createCanvas(600, 400);
-  canvas.parent("canvas-wrap") 
+  canvas.parent("canvas-wrap")
+  textFont(poppins);
 
   // Make a slider to control the frame rate
   frameSlider = createSlider(0.5, 30, 10, 0);
   frameSlider.parent("canvas-wrap");
-  frameSlider.position(50, -20);
+  frameSlider.position(50, -5);
   frameSlider.size(500);
 
   // Make a pause button
@@ -109,7 +117,10 @@ function setup() {
 }
 
 function draw() {
+ 
   background('aliceblue');
+  tint(255, 255, 255, 180);
+  image(parchment, 0, 0);
   // Allow slider to control frame rate
   let speed = frameSlider.value();
   frameRate(speed);
@@ -158,8 +169,8 @@ class NPC {
     ]
     textSize(18);
     textAlign(CENTER);
-    text(desc[0], random(210, width - 210), random(15, 130));
-    text(desc[1], random(160, width - 160), random(145, 260));
+    text(desc[0], random(220, width - 220), random(15, 130));
+    text(desc[1], random(170, width - 170), random(145, 260));
     text(desc[2], random(160, width - 160), random(270, 385));
   }
 
