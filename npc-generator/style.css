@@ -8,19 +8,24 @@ html, body {
   background-color: #cfecec;
 }
 
+h1 {
+  margin-bottom: 50px;
+}
+
 #canvas-wrap {
   width: 600px;
-  height: 400px;
   margin: 0 auto;
   position: relative;
 }
 
 canvas {
   display: block;
+  border-radius: 10px;
 }
 
 button {
   padding: 10px 16px;
+  margin: 5px;
   cursor: pointer;
   font-size: 16px;
   color: white;
@@ -33,4 +38,18 @@ button {
 button:hover {
   background-color: #cfecec;
   color: slategray;
+}
+
+.character-list {
+  margin: 50px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.character-list p {
+  margin: 5px auto;
+  padding: 15px;
+  background-color: aliceblue;
+  border-radius: 10px;
 }
