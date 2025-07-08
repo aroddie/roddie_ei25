@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+@import url("https://use.typekit.net/pul1ftd.css");
+
+:root {
+  --black: #222223;
+  --pink: #ebc6de;
+  --purple: #c1a7e2;
+  --mint: #b6e0d7;
+  --header: "Cherry Bomb One", cursive;
+  --serif: "mrs-eaves", "Baskerville", serif;
+  --sans-serif: "mr-eaves-sans", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: var(--header);
+  font-size: 3rem;
+}
+
+canvas {
+  display: block;
+}
