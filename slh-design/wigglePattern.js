@@ -68,7 +68,7 @@ sparkles = [
 }
 
 function setup() {
-  let wigglePattern = createCanvas(windowWidth, 200);
+  let wigglePattern = createCanvas(windowWidth, 400);
   wigglePattern.parent('canvas1');
 }
 

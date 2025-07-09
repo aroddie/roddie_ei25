@@ -72,7 +72,7 @@ sparkles = [
 }
 
 function setup() {
-let jumblePattern = createCanvas(windowWidth, 200);
+let jumblePattern = createCanvas(windowWidth, 400);
 jumblePattern.parent('canvas2');
 mixIcons();
 
