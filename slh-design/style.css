@@ -14,13 +14,42 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: var(--pink);
+  color: var(--black)
 }
 
 h1 {
   font-family: var(--header);
-  font-size: 3rem;
+  font-size: 65px;
+  display: none;
+}
+h2 {
+  font-family: var(--header);
+  font-size: 42px;
+  margin-top: 0;
 }
 
 canvas {
   display: block;
+}
+
+.content-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.btn-link {
+  font-family: var(--serif);
+  padding: 8px 16px;
+  text-decoration: none;
+  color: var(--pink);
+  background-color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.btn-link:hover {
+  background-color: var(--pink);
+  color: var(--black);
 }

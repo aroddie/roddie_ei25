@@ -4,6 +4,11 @@ let hearts = [];
 let moons = [];
 let skulls = [];
 let sparkles = [];
+let colors = [
+  "#ebc6de",
+  "#c1a7e2",
+  "#b6e0d7"
+]
 
 function preload() {
 bows = [
@@ -62,19 +67,15 @@ sparkles = [
 ];
 }
 
-
 function setup() {
-  createCanvas(600, 400);
-  background('#ebc6de');
-  createPattern();
-  createPattern();
-  createPattern();
-  createPattern();
-  createPattern();
+  let wigglePattern = createCanvas(windowWidth, 200);
+  wigglePattern.parent('canvas1');
 }
 
 function draw() {
-
+  frameRate(3);
+  background('#222223');
+  createPattern(hearts, sparkles, bows, skulls, ghosts, moons);
 }
 
 function randomize(array) {
@@ -84,21 +85,27 @@ function randomize(array) {
 
 function resizeImages(array) {
    for (let i = 0; i < array.length; i++) {
-  array[i].resize(50, 0);
+  array[i].resize(30, 0);
   }
 }
 
-function createPattern() {
-  resizeImages(bows);
-  resizeImages(ghosts);
-  resizeImages(hearts);
-  resizeImages(moons);
-  resizeImages(skulls);
-  resizeImages(sparkles);
-  image(randomize(bows), random(width), random(height));
-  image(randomize(ghosts), random(width), random(height));
-  image(randomize(hearts), random(width), random(height));
-  image(randomize(moons), random(width), random(height));
-  image(randomize(skulls), random(width), random(height));
-  image(randomize(sparkles), random(width), random(height));
+function createPattern(array, array2, array3, array4, array5, array6) {
+  resizeImages(array);
+  resizeImages(array2);
+  resizeImages(array3);
+  resizeImages(array4);
+  resizeImages(array5);
+  resizeImages(array6);
+  let space = 125;
+  for ( x = 0; x < width + 50; x += space){
+    for ( y = 0; y < height + 50; y += space){
+      tint(randomize(colors));
+      image(randomize(array), x, y);
+      image(randomize(array2), x + space/1.5, y + space/2);
+      image(randomize(array3), x + space/3, y + space/3);
+      image(randomize(array4), x + space, y + space/2.5);
+      image(randomize(array5), x + space/2, y);
+      image(randomize(array6), x + (space-space/1.25), y + space/1.5);
+    }
+  }
 }
